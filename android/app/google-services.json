@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "26508874175",
+    "project_id": "products-cars-app",
+    "storage_bucket": "products-cars-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26508874175:android:77e2e763c80e618f02910a",
+        "android_client_info": {
+          "package_name": "at.fares.products_cars_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26508874175-avgqhcus1v45287pge0p00ip8isfqe1s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs2ZM6PzOY5dVqzFScauJzmjkstjINHAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26508874175-avgqhcus1v45287pge0p00ip8isfqe1s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
