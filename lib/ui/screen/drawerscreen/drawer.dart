@@ -35,7 +35,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
+  
     super.initState();
     setState(
       () => _languge.getLanguge(),
@@ -143,21 +143,21 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 SizedBox(
                   height: kDefaultVerticalPadding,
                 ),
-                MenuItem(
+                MenuItemDrawer(
                     icon: Icons.home,
                     title: _languge.tHome(),
                     press: () {
                       Navigator.pushNamed(context, HomeScreen.routeName);
                     }),
                 Divider(),
-                MenuItem(
+                MenuItemDrawer(
                     icon: Icons.settings,
                     title: _languge.tSetting(),
                     press: () {
                       Navigator.pushNamed(context, SettingsScreen.routeName);
                     }),
                 Divider(),
-                MenuItem(
+                MenuItemDrawer(
                     icon: Icons.logout,
                     title: _languge.tLogOut(),
                     press: () {

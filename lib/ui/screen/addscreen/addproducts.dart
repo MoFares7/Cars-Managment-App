@@ -1,10 +1,10 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:io';
 
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
@@ -13,12 +13,12 @@ import 'package:my_products/constant/color.dart';
 import 'package:my_products/constant/size.dart';
 import 'package:my_products/model/languge.dart';
 import 'package:my_products/model/productpicture.dart';
-import 'package:my_products/model/products.dart';
+
 import 'package:my_products/model/provider.dart';
-import 'package:path/path.dart' as path;
+
 import 'package:my_products/ui/widget/dropdown.dart';
 
-import 'package:my_products/ui/widget/productcard.dart';
+
 
 import 'package:provider/provider.dart';
 
@@ -42,21 +42,9 @@ class _AddProductScreenState extends State<AddProductScreen> {
   final TextEditingController _priceController = TextEditingController();
   final TextEditingController _phoneNumberController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
-  final TextEditingController _cateController = TextEditingController();
-  final TextEditingController _imagesController = TextEditingController();
 
-  fullFiled() {
-    String namenew = _nameController.text.trim();
-    String pricenew = _priceController.text;
-    String descriptionNew = _descriptionController.text;
-    String imagenew = _imagesController.text;
-  }
+ 
 
-  void addItem() {
-    setState(() {
-      porduct.insertAll(0, fullFiled());
-    });
-  }
 
   DateTime dateTime = DateTime(2022, 1, 1);
   late File imageFile;
@@ -79,42 +67,6 @@ class _AddProductScreenState extends State<AddProductScreen> {
     }
   }
 
-  Future<void> _showChoiceDialog(BuildContext context) {
-    return showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text(
-              "Choose option",
-              style: TextStyle(color: Colors.blue),
-            ),
-            content: SingleChildScrollView(
-              child: ListBody(
-                children: [
-                  Divider(
-                    height: 1,
-                    color: Colors.blue,
-                  ),
-                  ListTile(
-                    onTap: () {
-                      getFromGallery();
-                    },
-                    title: Text("Gallery"),
-                    leading: Icon(
-                      Icons.account_box,
-                      color: Colors.blue,
-                    ),
-                  ),
-                  Divider(
-                    height: 1,
-                    color: Colors.blue,
-                  ),
-                ],
-              ),
-            ),
-          );
-        });
-  }
 
   String? newname;
   String? newprice;
@@ -380,19 +332,6 @@ class _AddProductScreenState extends State<AddProductScreen> {
     }
   }
 
-  /// Get from Camera
-  _getFromCamera() async {
-    PickedFile? pickedFile = await ImagePicker().getImage(
-      source: ImageSource.camera,
-      maxWidth: 1800,
-      maxHeight: 1800,
-    );
-    if (pickedFile != null) {
-      setState(() {
-        imageFile = File(pickedFile.path);
-      });
-    }
-  }
 
   showLoaderDialog(BuildContext context) {
     AlertDialog alert = AlertDialog(
@@ -448,6 +387,7 @@ class AddTextFormFiled extends StatelessWidget {
           if (value!.isEmpty) {
             return 'Required';
           }
+          return null;
         },
         keyboardType: type,
         decoration: InputDecoration(

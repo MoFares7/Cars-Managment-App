@@ -1,12 +1,11 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:my_products/constant/size.dart';
-import 'package:my_products/data/wallpaper.dart';
+
 import 'package:my_products/model/languge.dart';
 import 'package:my_products/ui/screen/homescreen/homescreen.dart';
 import 'package:my_products/ui/screen/loginscreen/loginscreen.dart';
@@ -38,22 +37,19 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final formKey = GlobalKey<FormState>();
 
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final TextEditingController _emailController = TextEditingController();
 
   final TextEditingController _passwordController = TextEditingController();
 
-  final _auth = FirebaseAuth.instance;
-
+ 
   bool isLoader = false;
 
   Languge _languge = Languge();
 
   @override
   Widget build(BuildContext context) {
-    String email = _emailController.text.trim();
-    String password = _passwordController.text.trim();
+   
     final authService = Provider.of<AuthService>(context);
     return Scaffold(
       body: Container(

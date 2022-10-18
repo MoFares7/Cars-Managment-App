@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_products/constant/size.dart';
-import 'package:my_products/main.dart';
+
 import 'package:my_products/model/productpicture.dart';
-import 'package:my_products/ui/screen/homescreen/homescreen.dart';
-import 'package:my_products/ui/widget/mainbutton.dart';
 
 import '../../constant/color.dart';
 import '../../model/languge.dart';
@@ -24,7 +22,7 @@ class _DetailsBodyState extends State<DetailsBody> {
   @override
   Widget build(BuildContext context) {
     Languge _languge = Languge();
-    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Stack(
         children: [

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_products/constant/color.dart';
 import 'package:my_products/model/productpicture.dart';
 import 'package:my_products/ui/widget/detailsima.dart';
-import 'package:my_products/model/productpicture.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Products products;

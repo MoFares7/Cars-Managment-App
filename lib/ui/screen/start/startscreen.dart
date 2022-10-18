@@ -3,12 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_products/constant/color.dart';
 import 'package:my_products/constant/size.dart';
-import 'package:my_products/data/wallpaper.dart';
+
 import 'package:my_products/model/languge.dart';
+import 'package:my_products/ui/screen/homescreen/homescreen.dart';
 import 'package:my_products/ui/screen/loginscreen/loginscreen.dart';
 import 'package:my_products/ui/screen/signupscreen/signup.dart';
 import 'package:my_products/ui/widget/mainbutton.dart';
 
+// ignore: must_be_immutable
 class StartScreen extends StatelessWidget {
   StartScreen({Key? key}) : super(key: key);
 
@@ -45,15 +47,15 @@ class StartScreen extends StatelessWidget {
               style: GoogleFonts.redHatMono(
                   textStyle: TextStyle(
                       letterSpacing: 1,
-                      fontSize: 22,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold)),
             ),
           ),
           SizedBox(
-            height: kDefaultVerticalPadding * 4,
+            height: kDefaultVerticalPadding,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 120),
+            padding: const EdgeInsets.symmetric(horizontal: 60),
             child: MainButton(
               backgroundColor: kOxfordBlueColor,
               label: _languge.tLogin(),
@@ -64,10 +66,10 @@ class StartScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: kDefaultVerticalPadding * 2,
+            height: kDefaultVerticalPadding,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 120),
+            padding: EdgeInsets.symmetric(horizontal: 60),
             child: MainButton(
                 backgroundColor: kOxfordBlueColor,
                 textColor: Colors.white,
@@ -75,6 +77,23 @@ class StartScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, SignUpScreen.routeName);
                 }),
+          ),
+          SizedBox(
+            height: kDefaultVerticalPadding,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 60),
+            child: MainButton(
+              backgroundColor: kOxfordBlueColor,
+              label: _languge.tGuest(),
+              textColor: Colors.white,
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+              },
+            ),
+          ),
+          SizedBox(
+            height: kDefaultVerticalPadding * 2,
           ),
         ],
       ),

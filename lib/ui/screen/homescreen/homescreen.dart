@@ -1,32 +1,24 @@
-import 'dart:io';
+// ignore_for_file: deprecated_member_use, duplicate_ignore
 
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:image_picker/image_picker.dart';
 
 import 'package:my_products/constant/color.dart';
 import 'package:my_products/constant/size.dart';
-import 'package:my_products/main.dart';
+
 import 'package:my_products/model/languge.dart';
 
 import 'package:my_products/ui/screen/detaielsScreen/Ditaielsscreen.dart';
 import 'package:my_products/ui/screen/drawerscreen/drawer.dart';
-import 'package:my_products/ui/screen/loginscreen/loginscreen.dart';
-import 'package:my_products/ui/screen/welcome/welcomescreen.dart';
-import 'package:my_products/ui/widget/costumtextfiled.dart';
+
 import 'package:my_products/ui/widget/mainappar.dart';
-import 'package:path/path.dart' as path;
+
 import 'package:my_products/ui/widget/productcard.dart';
 import 'package:provider/provider.dart';
 
-import '../../../data/checkinternet.dart';
 import '../../../model/productpicture.dart';
 import '../../../model/provider.dart';
 import '../addscreen/addproducts.dart';
@@ -46,20 +38,18 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-Languge _languge = Languge();
 final _searchController = TextEditingController();
 ProviderAddTask providerAddTask = ProviderAddTask();
 List<Products> pro = product1;
-
-final _auth = FirebaseAuth.instance;
 
 AlertDialog alertDial() {
   return AlertDialog(
     title: const Text('Worning'),
     content: const Text(' are you sure ?'),
     actions: [
-      FlatButton(onPressed: () {}, child: const Text('No')),
-      FlatButton(onPressed: () {}, child: const Text('Yes')),
+      // ignore: deprecated_member_use
+      TextButton(onPressed: () {}, child: const Text('No')),
+      TextButton(onPressed: () {}, child: const Text('Yes')),
     ],
   );
 }
@@ -68,7 +58,6 @@ AlertDialog alertDial() {
 
 class _HomeScreenState extends State<HomeScreen> {
 // This list holds the data for the list view
-  Languge _languge = Languge();
 
   void showLoaderDialog(BuildContext context) {
     AlertDialog alert = AlertDialog(
@@ -97,7 +86,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     setState(() {
@@ -109,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     Languge _languge = Languge();
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return Scaffold(
         drawer: const DrawerScreen(),
         body: Stack(
@@ -124,7 +112,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       title: '',
                       leading: IconButton(
                           onPressed: () {
-                            drawer:
                             Navigator.pushNamed(
                                 context, DrawerScreen.routeName);
                           },
@@ -181,6 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     MaxLengthValidator(17, errorText: 'The Max Length is 17'),
                     MinLengthValidator(1, errorText: 'The Min Length is 1'),
                   ]);
+                  return null;
                 },
                 controller: _searchController,
                 onChanged: (value) {

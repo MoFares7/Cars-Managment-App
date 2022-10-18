@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_products/main.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Languge extends ChangeNotifier {
   String _lan = languge;
@@ -21,6 +20,14 @@ class Languge extends ChangeNotifier {
       return 'مرحبا بكم في هذا التطبيق ';
     } else {
       return 'Welcome in our Application';
+    }
+  }
+
+  String tGuest() {
+    if (getLanguge() == 'AR') {
+      return '  تسجيل كزائر ';
+    } else {
+      return ' Login as Guest ';
     }
   }
 
@@ -214,7 +221,8 @@ class Languge extends ChangeNotifier {
       return 'Are you sure want to logout ?';
     }
   }
-    String tWarningDelete() {
+
+  String tWarningDelete() {
     if (getLanguge() == 'AR') {
       return ' هل تريد حذف هذا المنتج ؟   ';
     } else {

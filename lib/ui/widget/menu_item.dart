@@ -1,9 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MenuItem extends StatelessWidget {
-  MenuItem({
+class MenuItemDrawer extends StatelessWidget {
+  MenuItemDrawer({
     Key? key,
     required this.icon,
     required this.title,
@@ -29,7 +28,7 @@ class MenuItem extends StatelessWidget {
                 child: Icon(
                   icon,
                   size: 20,
-                 // color: Colors.black,
+                  // color: Colors.black,
                 ),
               ),
               Expanded(
@@ -37,11 +36,12 @@ class MenuItem extends StatelessWidget {
                 child: Text(
                   title,
                   style: GoogleFonts.redHatMono(
-                          textStyle:TextStyle(    
-                  //  color: Colors.black,
-                    fontSize: 16,
+                    textStyle: TextStyle(
+                      //  color: Colors.black,
+                      fontSize: 16,
+                    ),
                   ),
-                ),),
+                ),
               ),
             ],
           ),
