@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
+
 import 'package:my_products/main.dart';
 import 'package:my_products/model/productpicture.dart';
 

@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_products/constant/color.dart';
 import 'package:my_products/constant/size.dart';
-import 'package:my_products/ui/screen/loginscreen/loginscreen.dart';
 import 'package:my_products/ui/screen/start/startscreen.dart';
-import 'package:my_products/ui/widget/mainbutton.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);

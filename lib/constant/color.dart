@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 const Color kRichBlackColor = Color(0xFF0D1B2A); // title color

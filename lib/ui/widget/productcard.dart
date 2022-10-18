@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,7 +34,7 @@ void like() {}
 class _ProductCardState extends State<ProductCard> {
   @override
   void initState() {
-    // TODO: implement initState
+   
     super.initState();
     getSelected();
   }

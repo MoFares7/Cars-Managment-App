@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_products/constant/color.dart';
 import 'package:my_products/constant/size.dart';
@@ -35,7 +35,6 @@ class _MyAppState extends State<SettingsScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     getSelected();
@@ -58,7 +57,6 @@ class _MyAppState extends State<SettingsScreen> {
         backgroundColor: kOxfordBlueColor,
         iconTheme: IconThemeData(color: Colors.white),
         elevation: 0,
-        brightness: Brightness.light,
         leading: IconButton(
           onPressed: () {
             Navigator.pushNamed(context, HomeScreen.routeName);
@@ -66,6 +64,7 @@ class _MyAppState extends State<SettingsScreen> {
           },
           icon: Icon(Icons.arrow_back),
         ),
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
       ),
       body: SingleChildScrollView(
         child: Card(
@@ -82,7 +81,6 @@ class _MyAppState extends State<SettingsScreen> {
                     style: GoogleFonts.redHatMono(textStyle: TextStyle())),
                 leading: Icon(
                   Icons.language,
-                 
                 ),
                 trailing: DropdownButton(
                   hint: Text('Languges'),
@@ -113,7 +111,6 @@ class _MyAppState extends State<SettingsScreen> {
                       style: GoogleFonts.redHatMono(textStyle: TextStyle())),
                   leading: Icon(
                     Icons.brightness_2,
-                   
                   ),
                   trailing: Switch(
                     activeColor: kOxfordBlueColor,
@@ -141,7 +138,6 @@ class _MyAppState extends State<SettingsScreen> {
                     style: GoogleFonts.redHatMono(textStyle: TextStyle())),
                 leading: Icon(
                   Icons.notification_important,
-                
                 ),
                 trailing: Switch(
                   activeColor: kOxfordBlueColor,

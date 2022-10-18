@@ -1,26 +1,19 @@
-import 'dart:async';
+
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:my_products/constant/color.dart';
 import 'package:my_products/constant/size.dart';
 import 'package:my_products/data/authService.dart';
 import 'package:my_products/data/wallpaper.dart';
 import 'package:my_products/model/languge.dart';
-import 'package:my_products/ui/screen/homescreen/homescreen.dart';
 import 'package:my_products/ui/screen/signupscreen/signup.dart';
-import 'package:my_products/ui/screen/welcome/welcomescreen.dart';
 import 'package:my_products/ui/widget/mainbutton.dart';
 import 'package:my_products/ui/widget/passwordfiled.dart';
 import 'package:my_products/ui/widget/emai;filed.dart';
-import 'package:overlay_support/overlay_support.dart';
 import 'package:provider/provider.dart';
-import '../../../data/checkinternet.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -74,13 +67,11 @@ void showCheckNetDialog(BuildContext context, String text) {
 class _LoginScreenState extends State<LoginScreen> {
   // Note: This is a GlobalKey<ScaffoldState>,
   final formKey = GlobalKey<FormState>();
-  final _auth = FirebaseAuth.instance;
 
   final TextEditingController _emailController = TextEditingController();
 
   final TextEditingController _passwordController = TextEditingController();
 
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final Languge _languge = Languge();
 
@@ -90,8 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
-
+ 
     super.dispose();
   }
 

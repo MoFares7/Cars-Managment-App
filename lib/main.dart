@@ -7,17 +7,13 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_products/data/authService.dart';
 import 'package:my_products/data/wallpaper.dart';
-import 'package:my_products/model/languge.dart';
-import 'package:my_products/model/productpicture.dart';
-import 'package:my_products/model/products.dart';
+
 import 'package:my_products/model/provider.dart';
 import 'package:my_products/ui/screen/homescreen/homescreen.dart';
 
 import 'package:my_products/ui/screen/welcome/welcomescreen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'constant/color.dart';
 import 'constant/route_config.dart';
 
 var languge = 'EA';
